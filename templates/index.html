@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Diagnosis Predictor</title>
+</head>
+<body>
+    <h1>Heart Disease Diagnosis Predictor</h1>
+    <form action="/predict" method="post">
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Age: <input type="number" name="Age" required></label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Sex:</label><br>
+        <input type="radio" id="male" name="Sex" value="1" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="Sex" value="0" required>
+        <label for="female">Female</label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Chest Pain Type:</label><br>
+        <input type="radio" id="typical angina" name="Chest Pain Type" value="0" required>
+        <label for="typical angina">Typical Angina</label>
+        <input type="radio" id="atypical angina" name="Chest Pain Type" value="1" required>
+        <label for="atypical angina">Atypical Angina</label>
+        <input type="radio" id="non-anginal pain" name="Chest Pain Type" value="2" required>
+        <label for="non-anginal pain">Non-Anginal Pain</label>
+        <input type="radio" id="asymptomatic" name="Chest Pain Type" value="3" required>
+        <label for="asymptomatic">Asymptomatic</label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Resting Blood Pressure: <input type="number" name="Resting Blood Pressure" required></label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Serum Cholestoral (mg/dL): <input type="number" name="Serum Cholestoral (mg/dL)" required></label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Fasting Blood Sugar:</label><br>
+        <input type="radio" id="yes" name="Fasting Blood Sugar" value="1" required>
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="Fasting Blood Sugar" value="0" required>
+        <label for="no">No</label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Resting ECG:</label><br>
+        <input type="radio" id="normal" name="Resting ECG" value="0" required>
+        <label for="normal">Normal</label>
+        <input type="radio" id="abnormal (minor)" name="Resting ECG" value="1" required>
+        <label for="abnormal (minor)">Abnormal (Minor)</label>
+        <input type="radio" id="abnormal (significant)" name="Resting ECG" value="2" required>
+        <label for="abnormal (significant)">Abnormal (Significant)</label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Maximum Heart Rate Achieved:<input type="number" name="Maximum Heart Rate Achieved" required></label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Exercise Induced Angina:</label><br>
+        <input type="radio" id="yes" name="Exercise Induced Angina" value="1" required>
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="Exercise Induced Angina" value="0" required>
+        <label for="no">No</label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">ST Depression Induced By Exercise Relative To Rest:<input type="number" name="ST Depression Induced By Exercise Relative To Rest" required></label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Slope Of The Peak Exercise ST Segment:</label><br>
+        <input type="radio" id="up sloping" name="Slope Of The Peak Exercise ST Segment" value="0" required>
+        <label for="up sloping">Up Sloping</label>
+        <input type="radio" id="flat" name="Slope Of The Peak Exercise ST Segment" value="1" required>
+        <label for="flat">Flat</label>
+        <input type="radio" id="down sloping" name="Slope Of The Peak Exercise ST Segment" value="2" required>
+        <label for="down sloping">Down Sloping</label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Number Of Major Vessels Colored By Flourosopy:</label><br>
+        <input type="radio" id="0" name="Number Of Major Vessels Colored By Flourosopy" value="0" required>
+        <label for="0">0</label>
+        <input type="radio" id="1" name="Number Of Major Vessels Colored By Flourosopy" value="1" required>
+        <label for="1">1</label>
+        <input type="radio" id="2" name="Number Of Major Vessels Colored By Flourosopy" value="2" required>
+        <label for="2">2</label>
+        <input type="radio" id="3" name="Number Of Major Vessels Colored By Flourosopy" value="3" required>
+        <label for="3">3</label>
+        <input type="radio" id="4" name="Number Of Major Vessels Colored By Flourosopy" value="4" required>
+        <label for="4">4</label><br>
+
+        <br>
+
+        <label style="background-color: rgb(209, 206, 206); font-weight: bold;">Thal:</label><br>
+        <input type="radio" id="normal" name="Thal" value="0" required>
+        <label for="normal">Normal</label>
+        <input type="radio" id="fixed defect" name="Thal" value="1" required>
+        <label for="fixed defect">Fixed Defect</label>
+        <input type="radio" id="reversable defect" name="Thal" value="2" required>
+        <label for="reversable defect">Reversable Defect</label><br>
+
+        <br>
+
+        <input type="submit" value="Predict" style="background-color: rgb(76, 76, 180); color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">
+    </form>
+    <p>{{ prediction_text }}</p>
+</body>
+</html>
